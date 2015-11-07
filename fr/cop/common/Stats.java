@@ -30,32 +30,32 @@ public class Stats {
 	private int Earned_Golds_Per_Second;
 	private int Golds;
 
-	private final int STAT_ID_HP = 0;
-	private final int STAT_ID_HP_Regen = 1;
-	private final int STAT_ID_MP = 2;
-	private final int STAT_ID_MP_Regen = 3;
-	private final int STAT_ID_Physical_Resistance = 4;
-	private final int STAT_ID_Magic_Resistance = 5;
-	private final int STAT_ID_Magic_Damage = 6;
-	private final int STAT_ID_Magic_Pen = 7;
-	private final int STAT_ID_Magic_Drain = 8;
-	private final int STAT_ID_Physical_Damage = 9;
-	private final int STAT_ID_Physical_Pen = 10;
-	private final int STAT_ID_Physical_Drain = 11;
-	private final int STAT_ID_Raw_Damage = 12;
-	private final int STAT_ID_Attack_Speed = 13;
-	private final int STAT_ID_Critical_Chance = 14;
-	private final int STAT_ID_Mana_Drain = 15;
-	private final int STAT_ID_Cooldown_Reduction = 16;
-	private final int STAT_ID_Mana_Cost_Reduction = 17;
-	private final int STAT_ID_Returned_Physical_Damage = 18;
-	private final int STAT_ID_Returned_Magic_Damage = 19;
-	private final int STAT_ID_Bonus_Gold = 20;
-	private final int STAT_ID_Range = 21;
-	private final int STAT_ID_Move_Speed = 22;
-	private final int STAT_ID_XP = 23;
-	private final int STAT_ID_Earned_Gold_Per_Second = 24;
-	private final int STAT_ID_Golds = 25;
+	public static final int STAT_ID_HP = 0;
+	public static final int STAT_ID_HP_Regen = 1;
+	public static final int STAT_ID_MP = 2;
+	public static final int STAT_ID_MP_Regen = 3;
+	public static final int STAT_ID_Physical_Resistance = 4;
+	public static final int STAT_ID_Magic_Resistance = 5;
+	public static final int STAT_ID_Magic_Damage = 6;
+	public static final int STAT_ID_Magic_Pen = 7;
+	public static final int STAT_ID_Magic_Drain = 8;
+	public static final int STAT_ID_Physical_Damage = 9;
+	public static final int STAT_ID_Physical_Pen = 10;
+	public static final int STAT_ID_Physical_Drain = 11;
+	public static final int STAT_ID_Raw_Damage = 12;
+	public static final int STAT_ID_Attack_Speed = 13;
+	public static final int STAT_ID_Critical_Chance = 14;
+	public static final int STAT_ID_Mana_Drain = 15;
+	public static final int STAT_ID_Cooldown_Reduction = 16;
+	public static final int STAT_ID_Mana_Cost_Reduction = 17;
+	public static final int STAT_ID_Returned_Physical_Damage = 18;
+	public static final int STAT_ID_Returned_Magic_Damage = 19;
+	public static final int STAT_ID_Bonus_Gold = 20;
+	public static final int STAT_ID_Range = 21;
+	public static final int STAT_ID_Move_Speed = 22;
+	public static final int STAT_ID_XP = 23;
+	public static final int STAT_ID_Earned_Gold_Per_Second = 24;
+	public static final int STAT_ID_Golds = 25;
 
 	private int[] STATS = {HP, HP_Regen, MP, MP_Regen, Physical_Resistance, Magic_Resistance, Magic_Damage, Magic_Pen, Magic_Drain, Physical_Damage, Physical_Pen, Attack_Speed, Critical_Chance, Mana_Drain, Cooldown_Reduction, Mana_Cost_Reduction, Returned_Physical_Damage, Returned_Magic_Damage, Bonus_Gold, Physical_Drain, Raw_Damage, Range, Move_Speed, Xp, Earned_Golds_Per_Second, Golds};
 
@@ -64,7 +64,7 @@ public class Stats {
 	}
 
 	public void setStat(int statId, int value) {
-
+		STATS[statId] = value;
 	}
 
 	public void scaleUpStat(int statId, int value) {
