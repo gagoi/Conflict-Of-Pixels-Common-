@@ -1,10 +1,11 @@
 package fr.cop.common;
 
-import fr.cop.common.entities.Entity;
+import fr.cop.common.entities.champions.Champion;
 
 public class Game {
 
 	private int time; // Temps de jeu (en secondes).
+	private Champion[] champs;
 
 	
 	
@@ -28,5 +29,16 @@ public class Game {
 	}
 
 
+	public void getInformation() {
+		
+	}
+
+	public void setChampions(Champion[] champs){
+		this.champs = champs;
+	}
+
+	public Champion getChampion(int id){
+		return champs[id];
+	}
 
 }
