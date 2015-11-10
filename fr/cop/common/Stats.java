@@ -29,6 +29,7 @@ public class Stats {
 	private int Xp;
 	private int Earned_Golds_Per_Second;
 	private int Golds;
+	private int Height;
 
 	public static final int STAT_ID_HP = 0;
 	public static final int STAT_ID_HP_Regen = 1;
@@ -56,8 +57,13 @@ public class Stats {
 	public static final int STAT_ID_XP = 23;
 	public static final int STAT_ID_Earned_Gold_Per_Second = 24;
 	public static final int STAT_ID_Golds = 25;
+	public static final int STAT_ID_Height = 26;
 
-	private int[] STATS = {HP, HP_Regen, MP, MP_Regen, Physical_Resistance, Magic_Resistance, Magic_Damage, Magic_Pen, Magic_Drain, Physical_Damage, Physical_Pen, Attack_Speed, Critical_Chance, Mana_Drain, Cooldown_Reduction, Mana_Cost_Reduction, Returned_Physical_Damage, Returned_Magic_Damage, Bonus_Gold, Physical_Drain, Raw_Damage, Range, Move_Speed, Xp, Earned_Golds_Per_Second, Golds};
+	public static final int HEIGHT_SKY = 1;
+	public static final int HEIGHT_UNDERGROUND = -1;
+	public static final int HEIGHT_NORMAL = 0;
+	
+	private int[] STATS = {HP, HP_Regen, MP, MP_Regen, Physical_Resistance, Magic_Resistance, Magic_Damage, Magic_Pen, Magic_Drain, Physical_Damage, Physical_Pen, Attack_Speed, Critical_Chance, Mana_Drain, Cooldown_Reduction, Mana_Cost_Reduction, Returned_Physical_Damage, Returned_Magic_Damage, Bonus_Gold, Physical_Drain, Raw_Damage, Range, Move_Speed, Xp, Earned_Golds_Per_Second, Golds, Height};
 
 	public Stats() {
 
@@ -68,14 +74,18 @@ public class Stats {
 	}
 
 	public void scaleUpStat(int statId, int value) {
-
+		STATS[statId] += value;
 	}
 
 	public void scaleDownStat(int statId, int value) {
-
+		STATS[statId] -= value;
 	}
 
 	public int getStat(int statId) {
 		return STATS[statId];
+	}
+	
+	public void setHeight(int height){
+		STATS[STAT_ID_Height] = height;
 	}
 }
