@@ -52,7 +52,5 @@ public interface Entity {
 
 	public void onDamageDealt();
 
-	public int[] getSprite();
-
-	public boolean mustBeDraw();
+	public String getSpriteInformation();
 }
