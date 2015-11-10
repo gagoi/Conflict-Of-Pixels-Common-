@@ -1,6 +1,5 @@
 package fr.cop.common;
 
-@SuppressWarnings("unused")
 public class Stats {
 
 	private int HP;

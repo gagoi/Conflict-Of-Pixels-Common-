@@ -11,8 +11,17 @@ import fr.cop.common.entities.spells.Spell_Base;
 public class Champion implements Entity {
 
 	private Spell_Base[] spells = new Spell_Base[4];
+	private int posX, posY;
 
 	public Champion() {
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
 	}
 
 	public Spell_Base[] getSpells() {
@@ -51,17 +60,17 @@ public class Champion implements Entity {
 
 	@Override
 	public String getUUID() {
-		return "champion:"+getDisplayedName().toLowerCase();
+		return "champion:" + getDisplayedName().toLowerCase();
 	}
 
 	@Override
 	public int getPosX() {
-		return 0;
+		return posX;
 	}
 
 	@Override
 	public int getPosY() {
-		return 0;
+		return posY;
 	}
 
 	@Override
