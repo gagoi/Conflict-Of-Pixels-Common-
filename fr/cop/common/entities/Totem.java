@@ -26,30 +26,6 @@ public class Totem implements Entity{
 	}
 
 	@Override
-	public int getPosX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getPosY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getWidth() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getHeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public Vector<Buffs> getBuffs() {
 		// TODO Auto-generated method stub
 		return null;
@@ -107,6 +83,42 @@ public class Totem implements Entity{
 	public String getSpriteInformation() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public int getServerPosX() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getServerPosY() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getServerWidth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getServerHeight() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getRenderWith() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int getRenderHeight() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

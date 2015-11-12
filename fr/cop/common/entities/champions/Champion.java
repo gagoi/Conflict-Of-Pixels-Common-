@@ -62,27 +62,7 @@ public class Champion implements Entity {
 	public String getUUID() {
 		return "champion:" + getDisplayedName().toLowerCase();
 	}
-
-	@Override
-	public int getPosX() {
-		return posX;
-	}
-
-	@Override
-	public int getPosY() {
-		return posY;
-	}
-
-	@Override
-	public int getWidth() {
-		return 0;
-	}
-
-	@Override
-	public int getHeight() {
-		return 0;
-	}
-
+	
 	@Override
 	public Vector<Buffs> getBuffs() {
 		return null;
@@ -123,19 +103,45 @@ public class Champion implements Entity {
 
 	@Override
 	public void onDamageTaken() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void onDamageDealt() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public String getSpriteInformation() {
 		return null;
+	}
+
+	@Override
+	public int getServerPosX() {
+		return posX;
+	}
+
+	@Override
+	public int getServerPosY() {
+		return posY;
+	}
+
+	@Override
+	public int getServerWidth() {
+		return 16;
+	}
+
+	@Override
+	public int getServerHeight() {
+		return 16;
+	}
+
+	@Override
+	public int getRenderWith() {
+		return 16;
+	}
+
+	@Override
+	public int getRenderHeight() {
+		return 16;
 	}
 
 }

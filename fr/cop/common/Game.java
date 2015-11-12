@@ -2,7 +2,6 @@ package fr.cop.common;
 
 import java.util.Vector;
 
-import fr.cop.common.entities.Entity;
 import fr.cop.common.entities.champions.Champion;
 import fr.cop.common.entities.champions.individual.Champion_Test_1;
 import fr.cop.common.entities.spells.Spell_Base;

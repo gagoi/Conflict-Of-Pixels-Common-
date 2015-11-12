@@ -14,13 +14,25 @@ public interface Entity {
 
 	public String getUUID();
 
-	public int getPosX();
+	public int getServerPosX();
 
-	public int getPosY();
+	public int getServerPosY();
+	
+	public default int getRenderPosX(int screenSize, int gridSize){
+		return (getServerPosX()*screenSize)/gridSize;
+	}
+	
+	public default int getRenderPosY(int screenSize, int gridSize){
+		return (getServerPosY()*screenSize)/gridSize;
+	}
 
-	public int getWidth();
+	public int getServerWidth();
 
-	public int getHeight();
+	public int getServerHeight();
+	
+	public int getRenderWith();
+	
+	public int getRenderHeight();
 
 	public default boolean isHitting(int poxX, int posY) {
 		return getHitbox().contains(poxX, posY);
