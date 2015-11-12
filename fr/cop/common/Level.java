@@ -9,10 +9,12 @@ public class Level {
 	private final String PATH; // Chemin d'accès au fichier de la map (déclaré final car ne sera pas changé).
 	private final int SIZE; // Taille de la map (déclaré final car ne sera pas changé).
 	private String map; // Contenu de la map (suite de char).
+	public int gridSize;
 	
 	public Level(String path, int size) { // Objet Level ===> map
 		SIZE = size; // On instancie la taille.
 		PATH = path; // On instancie le chemin d'accès au fichier.
+		gridSize = SIZE*16*4;
 		try { // On essaie de ...
 			BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/fr/cop/resources/maps/" + PATH + ".txt"))); // ... lire le fichier.
 			String line = " "; // Notre ligne actuelle vaut " ".

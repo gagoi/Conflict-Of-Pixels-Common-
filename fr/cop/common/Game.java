@@ -1,10 +1,12 @@
 package fr.cop.common;
 
+import java.io.File;
 import java.util.Vector;
 
 import fr.cop.common.entities.champions.Champion;
 import fr.cop.common.entities.champions.individual.Champion_Test_1;
 import fr.cop.common.entities.spells.Spell_Base;
+import fr.cop.common.logger.SimpleLog;
 
 public class Game {
 
@@ -12,8 +14,14 @@ public class Game {
 	private Champion[] champs;
 	private Vector<Spell_Base> spells;
 	private Level lvl;
+	public static File gameFolder = new File("C:\\Conflict Of Pixels\\");
+	public static final SimpleLog logger = new SimpleLog();
 
 	public Game() {
+		if (!gameFolder.exists()) {
+			gameFolder.mkdirs();
+			Game.logger.logTxt("Folder Error ! ", "Create it !");
+		}
 		lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son nom et sa taille.
 		champs = new Champion[10];
 		champs[0] = new Champion_Test_1() {
@@ -74,5 +82,9 @@ public class Game {
 	
 	public Vector<Spell_Base> getSpells(){
 		return spells;
+	}
+	
+	public void requestMove(Champion champ,int x, int y){
+		champ.requestMove(x, y);
 	}
 }

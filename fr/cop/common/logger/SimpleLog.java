@@ -6,15 +6,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import fr.cop.game.core.Game_Frame;
+import fr.cop.common.Game;
 
 public class SimpleLog {
 
-	public File logFile = new File(Game_Frame.gameFolder, "log.txt");
+	public File logFile = new File(Game.gameFolder, "log.txt");
 	private PrintWriter writer;
 
 	public SimpleLog() {
-		if (!Game_Frame.gameFolder.exists()) Game_Frame.gameFolder.mkdirs();
+		if (!Game.gameFolder.exists()) Game.gameFolder.mkdirs();
 		if (!logFile.exists()) try {
 			logFile.createNewFile();
 		} catch (IOException e) {

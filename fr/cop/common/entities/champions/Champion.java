@@ -4,6 +4,7 @@ import java.awt.Polygon;
 import java.util.Vector;
 
 import fr.cop.common.Buffs;
+import fr.cop.common.Game;
 import fr.cop.common.Stats;
 import fr.cop.common.entities.Entity;
 import fr.cop.common.entities.spells.Spell_Base;
@@ -11,7 +12,7 @@ import fr.cop.common.entities.spells.Spell_Base;
 public class Champion implements Entity {
 
 	private Spell_Base[] spells = new Spell_Base[4];
-	private int posX, posY;
+	private int posX, posY, posXRequested, posYRequested;
 
 	public Champion() {
 	}
@@ -143,5 +144,17 @@ public class Champion implements Entity {
 	public int getRenderHeight() {
 		return 16;
 	}
+	
+	public void requestMove(int x, int y){
+		Game.logger.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y+").");
+		posXRequested = x;
+		posYRequested = y;
+	}
 
+	public void move(){
+		if(posX > posXRequested) posX-=1;
+		if(posX < posXRequested) posX+=1;
+		if(posY > posYRequested) posY-=1;
+		if(posY < posYRequested) posY+=1;
+	}
 }
