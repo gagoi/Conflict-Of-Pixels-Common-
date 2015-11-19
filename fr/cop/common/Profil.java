@@ -41,4 +41,8 @@ public class Profil {
 	public int getIcon() {
 		return 0;
 	}
+
+	public void setNickname(String text) {
+		this.nickname = text;
+	}
 }
