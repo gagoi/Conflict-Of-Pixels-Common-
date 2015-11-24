@@ -46,5 +46,5 @@ public class SimpleLog {
 		System.err.println("[" + hour + "H " + min + "M " + sec + "S] :: " + "/!\\ERROR/!\\" + tag + " : " + message);
 		writer.println("[" + hour + "H " + min + "M " + sec + "S] :: " + "/!\\ERROR/!\\" + tag + " : " + message);
 		writer.flush();
-	}
+	} 
 }
