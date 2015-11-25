@@ -17,14 +17,6 @@ public interface Entity {
 	public int getServerPosX();
 
 	public int getServerPosY();
-	
-	public default int getRenderPosX(int screenSize, int gridSize){
-		return (getServerPosX()*screenSize)/gridSize;
-	}
-	
-	public default int getRenderPosY(int screenSize, int gridSize){
-		return (getServerPosY()*screenSize)/gridSize;
-	}
 
 	public int getServerWidth();
 

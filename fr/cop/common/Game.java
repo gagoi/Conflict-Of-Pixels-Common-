@@ -32,7 +32,7 @@ public class Game {
 			champs = new Champion[10];
 			champs[0] = new Champion_Test_1() {
 				public String getSpriteInformation() {
-					return "tree";
+					return "tf";
 				};
 			};
 			champs[1] = new Champion_Test_1() {

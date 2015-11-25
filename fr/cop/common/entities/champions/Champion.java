@@ -63,7 +63,7 @@ public class Champion implements Entity {
 	public String getUUID() {
 		return "champion:" + getDisplayedName().toLowerCase();
 	}
-	
+
 	@Override
 	public Vector<Buffs> getBuffs() {
 		return null;
@@ -144,17 +144,18 @@ public class Champion implements Entity {
 	public int getRenderHeight() {
 		return 16;
 	}
-	
-	public void requestMove(int x, int y){
-		Game.logger.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y+").");
+
+	public void requestMove(int x, int y) {
+		Game.logger.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y + ").");
 		posXRequested = x;
 		posYRequested = y;
 	}
 
-	public void move(){
-		if(posX > posXRequested) posX-=1;
-		if(posX < posXRequested) posX+=1;
-		if(posY > posYRequested) posY-=1;
-		if(posY < posYRequested) posY+=1;
+	public void move() {
+		System.out.println("Move (" + posX + ";" + posY + ")");
+		if (this.posX > this.posXRequested) this.posX -= 1;
+		if (this.posX < this.posXRequested) this.posX += 1;
+		if (this.posY > this.posYRequested) this.posY -= 1;
+		if (this.posY < this.posYRequested) this.posY += 1;
 	}
 }
