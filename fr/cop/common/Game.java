@@ -14,33 +14,40 @@ public class Game {
 	private Champion[] champs;
 	private Vector<Spell_Base> spells;
 	private Level lvl;
-	public static File gameFolder = new File("C:\\Conflict Of Pixels\\");
-	public static final SimpleLog logger = new SimpleLog();
+	public static File gameFolder;
+	public static SimpleLog logger;
 
-	public Game() {
+	public final static int TYPE_SERVER = 0;
+	public final static int TYPE_CLIENT = 1;
+
+	public Game(String path, int type) {
+		gameFolder = new File(path);
+		logger = new SimpleLog();
 		if (!gameFolder.exists()) {
 			gameFolder.mkdirs();
 			Game.logger.logTxt("Folder Error ! ", "Create it !");
 		}
-		lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son nom et sa taille.
-		champs = new Champion[10];
-		champs[0] = new Champion_Test_1() {
-			public String getSpriteInformation() {
-				return "tree";
+		if (type == Game.TYPE_CLIENT) {
+			lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son nom et sa taille.
+			champs = new Champion[10];
+			champs[0] = new Champion_Test_1() {
+				public String getSpriteInformation() {
+					return "tree";
+				};
 			};
-		};
-		champs[1] = new Champion_Test_1() {
-			public String getSpriteInformation() {
-				return "top_tree";
+			champs[1] = new Champion_Test_1() {
+				public String getSpriteInformation() {
+					return "top_tree";
+				};
 			};
-		};
-		champs[2] = new Champion_Test_1() {
-			public String getSpriteInformation() {
-				return "bot_tree";
+			champs[2] = new Champion_Test_1() {
+				public String getSpriteInformation() {
+					return "bot_tree";
+				};
 			};
-		};
-		for (int i = 3; i < champs.length; i++) {
-			champs[i] = new Champion_Test_1();
+			for (int i = 3; i < champs.length; i++) {
+				champs[i] = new Champion_Test_1();
+			}
 		}
 	}
 
@@ -79,12 +86,12 @@ public class Game {
 	public int getChampionsNumber() {
 		return champs.length;
 	}
-	
-	public Vector<Spell_Base> getSpells(){
+
+	public Vector<Spell_Base> getSpells() {
 		return spells;
 	}
-	
-	public void requestMove(Champion champ,int x, int y){
+
+	public void requestMove(Champion champ, int x, int y) {
 		champ.requestMove(x, y);
 	}
 }
