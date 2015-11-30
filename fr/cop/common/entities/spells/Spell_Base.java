@@ -10,6 +10,7 @@ import fr.cop.common.entities.Entity;
 public class Spell_Base implements Entity{
 	
 	private String name;
+	@SuppressWarnings("unused")
 	private int posX, posY;
 	
 	public Spell_Base(String name) {

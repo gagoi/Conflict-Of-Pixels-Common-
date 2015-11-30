@@ -152,7 +152,6 @@ public class Champion implements Entity {
 	}
 
 	public void move() {
-		System.out.println("Move (" + posX + ";" + posY + ")");
 		if (this.posX > this.posXRequested) this.posX -= 1;
 		if (this.posX < this.posXRequested) this.posX += 1;
 		if (this.posY > this.posYRequested) this.posY -= 1;

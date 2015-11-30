@@ -19,13 +19,16 @@ public class Game {
 
 	public final static int TYPE_SERVER = 0;
 	public final static int TYPE_CLIENT = 1;
+	
+	private int type;
 
 	public Game(String path, int type) {
+		this.type = type;
 		gameFolder = new File(path);
 		logger = new SimpleLog();
 		if (!gameFolder.exists()) {
 			gameFolder.mkdirs();
-			Game.logger.logTxt("Folder Error ! ", "Create it !");
+			logger.logTxt("Folder Error ! ", "Create it !");
 		}
 		if (type == Game.TYPE_CLIENT) {
 			lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son nom et sa taille.
@@ -93,5 +96,9 @@ public class Game {
 
 	public void requestMove(Champion champ, int x, int y) {
 		champ.requestMove(x, y);
+	}
+
+	public int getType() {
+		return type;
 	}
 }

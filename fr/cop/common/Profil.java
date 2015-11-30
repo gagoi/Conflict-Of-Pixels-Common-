@@ -6,7 +6,7 @@ public class Profil {
 	String nickname, UUID;
 	int xpAmmount = 150;
 
-	public Profil() {
+	public Profil(String UUID) {
 		nickname = "Gagoi";
 	}
 
