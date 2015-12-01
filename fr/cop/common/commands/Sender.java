@@ -17,6 +17,7 @@ public class Sender {
 		try {
 			out.write(command + "\n");
 			out.flush();
+			Game.logger.logTxt("<Sender:Send>", command);
 		} catch (IOException e) {
 			Game.logger.logTxt("<Sender:Error>", "Client non connecté....");
 		}
