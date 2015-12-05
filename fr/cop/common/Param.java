@@ -1,4 +1,4 @@
-package fr.cop.common.commands;
+package fr.cop.common;
 
 public class Param {
 
