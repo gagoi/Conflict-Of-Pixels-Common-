@@ -11,6 +11,7 @@ public class Param {
 	public static final Param PLAYER_ID = new Param(0, 4);
 	public static final Param ITEM_ID = new Param(0, 50);
 	public static final Param PLAYER_UUID = new Param(16);
+	public static final Param PLAYER_PW = new Param("");
 
 	public static final int TYPE_MIN_MAX = 1;
 	public static final int TYPE_ARRAY_STRING = 0;
@@ -18,6 +19,11 @@ public class Param {
 
 	public Param(String[] avaibleValues) {
 		this.avaibleValues = avaibleValues;
+		paramType = TYPE_ARRAY_STRING;
+	}
+	
+	public Param(String avaibleValue) {
+		this.avaibleValues = new String[]{avaibleValue};
 		paramType = TYPE_ARRAY_STRING;
 	}
 
