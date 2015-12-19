@@ -8,7 +8,6 @@ import fr.cop.common.Game;
 import fr.cop.common.Stats;
 import fr.cop.common.entities.Entity;
 import fr.cop.common.entities.spells.Spell_Base;
-import fr.cop.game.graphics.sprites.ChampionSpriteSystem;
 
 public class Champion implements Entity {
 
