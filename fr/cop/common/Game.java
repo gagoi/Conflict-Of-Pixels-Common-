@@ -23,8 +23,8 @@ public class Game {
 	private int type;
 
 	public Game(String path, int type) {
-		this.type = type;
 		gameFolder = new File(path);
+		this.type = type;
 		logger = new SimpleLog();
 		if (!gameFolder.exists()) {
 			gameFolder.mkdirs();

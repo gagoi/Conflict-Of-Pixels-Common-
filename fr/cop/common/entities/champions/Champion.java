@@ -8,6 +8,7 @@ import fr.cop.common.Game;
 import fr.cop.common.Stats;
 import fr.cop.common.entities.Entity;
 import fr.cop.common.entities.spells.Spell_Base;
+import fr.cop.game.graphics.sprites.ChampionSpriteSystem;
 
 public class Champion implements Entity {
 
@@ -156,5 +157,9 @@ public class Champion implements Entity {
 		if (this.posX < this.posXRequested) this.posX += 1;
 		if (this.posY > this.posYRequested) this.posY -= 1;
 		if (this.posY < this.posYRequested) this.posY += 1;
+	}
+
+	public int getSpriteSystem() {
+		return 0;
 	}
 }
