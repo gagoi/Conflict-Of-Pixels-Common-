@@ -12,9 +12,20 @@ import fr.cop.common.entities.spells.Spell_Base;
 public class Champion implements Entity {
 
 	private Spell_Base[] spells = new Spell_Base[4];
-	private int posX, posY, posXRequested, posYRequested;
+	private int posX, posY, posXRequested, posYRequested, step;
+	private final String displayedName;
 
-	public Champion() {
+	public static final int DIRECTION_TOP = 0;
+	public static final int DIRECTION_BOTTOM = 1;
+	public static final int DIRECTION_RIGHT = 2;
+	public static final int DIRECTION_LEFT = 3;
+
+	public static final int STEP_CENTER = 0;
+	public static final int STEP_RIGHT = 1;
+	public static final int STEP_LEFT = 2;
+
+	public Champion(String name) {
+		this.displayedName = name;
 	}
 
 	public void setPosX(int posX) {
@@ -56,7 +67,7 @@ public class Champion implements Entity {
 
 	@Override
 	public String getDisplayedName() {
-		return null;
+		return this.displayedName;
 	}
 
 	@Override
@@ -142,7 +153,7 @@ public class Champion implements Entity {
 
 	@Override
 	public int getRenderHeight() {
-		return 16;
+		return 32;
 	}
 
 	public void requestMove(int x, int y) {
@@ -152,13 +163,23 @@ public class Champion implements Entity {
 	}
 
 	public void move() {
-		if (this.posX > this.posXRequested) this.posX -= 1;
-		if (this.posX < this.posXRequested) this.posX += 1;
-		if (this.posY > this.posYRequested) this.posY -= 1;
-		if (this.posY < this.posYRequested) this.posY += 1;
+		this.step++;
+		if(this.step > 2) this.step = 0;
+		if (this.posX > this.posXRequested) this.posX -= 5;
+		if (this.posX < this.posXRequested) this.posX += 5;
+		if (this.posY > this.posYRequested) this.posY -= 5;
+		if (this.posY < this.posYRequested) this.posY += 5;
 	}
 
-	public int getSpriteSystem() {
-		return 0;
+	public int getDirection(){
+		if (this.posX > this.posXRequested) return DIRECTION_LEFT;
+		if (this.posX < this.posXRequested) return DIRECTION_RIGHT;
+		if (this.posY > this.posYRequested) return DIRECTION_BOTTOM;
+		if (this.posY < this.posYRequested) return DIRECTION_TOP;
+		return DIRECTION_BOTTOM;
+	}
+	
+	public int getStep(){
+		return this.step;
 	}
 }
