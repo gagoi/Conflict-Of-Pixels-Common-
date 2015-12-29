@@ -143,7 +143,7 @@ public class Champion implements Entity {
 
 	@Override
 	public int getServerHeight() {
-		return 16;
+		return 32;
 	}
 
 	@Override

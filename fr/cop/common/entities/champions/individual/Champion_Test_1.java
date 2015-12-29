@@ -7,13 +7,9 @@ import fr.cop.common.entities.spells.Spell_Base_Untargeted;
 
 public class Champion_Test_1 extends Champion {
 	public Champion_Test_1() {
+		super("Test_0x000001");
 	}
-
-	@Override
-	public String getDisplayedName() {
-		return "Test_0x000001";
-	}
-
+	
 	@Override
 	public Spell_Base[] getSpells() {
 		Spell_Base_Targeted spell1 = new Spell_Base_Targeted("Spell1:target");
