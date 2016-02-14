@@ -27,7 +27,6 @@ public class Spell_Base implements Entity{
 		return null;
 	}
 
-	@Override
 	public String getDisplayedName() {
 		return name;
 	}
@@ -91,12 +90,6 @@ public class Spell_Base implements Entity{
 		
 	}
 
-	@Override
-	public String getSpriteInformation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	@Override
 	public int getServerPosX() {
@@ -124,19 +117,4 @@ public class Spell_Base implements Entity{
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-
-	@Override
-	public int getRenderWith() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public int getRenderHeight() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 }

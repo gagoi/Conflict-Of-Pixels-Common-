@@ -12,8 +12,8 @@ import fr.cop.common.entities.spells.Spell_Base;
 public class Champion implements Entity {
 
 	private Spell_Base[] spells = new Spell_Base[4];
-	private int posX, posY, posXRequested, posYRequested, step;
-	private final String displayedName;
+	private int posX, posY, posXRequested, posYRequested;
+	private final String SERVER_NAME;
 
 	public static final int DIRECTION_TOP = 0;
 	public static final int DIRECTION_BOTTOM = 1;
@@ -25,7 +25,7 @@ public class Champion implements Entity {
 	public static final int STEP_LEFT = 2;
 
 	public Champion(String name) {
-		this.displayedName = name;
+		SERVER_NAME = name;
 	}
 
 	public void setPosX(int posX) {
@@ -65,14 +65,10 @@ public class Champion implements Entity {
 		return null;
 	}
 
-	@Override
-	public String getDisplayedName() {
-		return this.displayedName;
-	}
 
 	@Override
 	public String getUUID() {
-		return "champion:" + getDisplayedName().toLowerCase();
+		return "champion:" + SERVER_NAME.toLowerCase();
 	}
 
 	@Override
@@ -97,20 +93,14 @@ public class Champion implements Entity {
 
 	@Override
 	public void onDeathEvent() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void onSpawnEvent() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void onRespawnEven() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -121,10 +111,7 @@ public class Champion implements Entity {
 	public void onDamageDealt() {
 	}
 
-	@Override
-	public String getSpriteInformation() {
-		return null;
-	}
+	
 
 	@Override
 	public int getServerPosX() {
@@ -146,15 +133,7 @@ public class Champion implements Entity {
 		return 32;
 	}
 
-	@Override
-	public int getRenderWith() {
-		return 16;
-	}
-
-	@Override
-	public int getRenderHeight() {
-		return 32;
-	}
+	
 
 	public void requestMove(int x, int y) {
 		Game.logger.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y + ").");
@@ -163,8 +142,6 @@ public class Champion implements Entity {
 	}
 
 	public void move() {
-		this.step++;
-		if(this.step > 2) this.step = 0;
 		if (this.posX > this.posXRequested) this.posX -= 5;
 		if (this.posX < this.posXRequested) this.posX += 5;
 		if (this.posY > this.posYRequested) this.posY -= 5;
@@ -177,9 +154,5 @@ public class Champion implements Entity {
 		if (this.posY > this.posYRequested) return DIRECTION_BOTTOM;
 		if (this.posY < this.posYRequested) return DIRECTION_TOP;
 		return DIRECTION_BOTTOM;
-	}
-	
-	public int getStep(){
-		return this.step;
 	}
 }

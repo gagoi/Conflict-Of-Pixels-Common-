@@ -10,7 +10,6 @@ public interface Entity {
 
 	public Polygon getHitbox();
 
-	public String getDisplayedName();
 
 	public String getUUID();
 
@@ -21,10 +20,6 @@ public interface Entity {
 	public int getServerWidth();
 
 	public int getServerHeight();
-	
-	public int getRenderWith();
-	
-	public int getRenderHeight();
 
 	public default boolean isHitting(int poxX, int posY) {
 		return getHitbox().contains(poxX, posY);
@@ -55,6 +50,4 @@ public interface Entity {
 	public void onDamageTaken();
 
 	public void onDamageDealt();
-
-	public String getSpriteInformation();
 }
