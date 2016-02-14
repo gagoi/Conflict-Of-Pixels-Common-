@@ -136,7 +136,7 @@ public class Champion implements Entity {
 	
 
 	public void requestMove(int x, int y) {
-		Game.logger.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y + ").");
+		Game.LOGGER.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y + ").");
 		posXRequested = x;
 		posYRequested = y;
 	}

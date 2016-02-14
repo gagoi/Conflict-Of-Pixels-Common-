@@ -1,6 +1,7 @@
 package fr.cop.common;
 
-import java.io.File;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.Vector;
 
 import fr.cop.common.entities.BaseEntity;
@@ -8,52 +9,40 @@ import fr.cop.common.logger.SimpleLog;
 
 public class Game {
 
-	private int time; // Temps de jeu (en secondes).
-	private Level lvl;
-	public static File gameFolder;
-	public static SimpleLog logger;
-	
-	private Vector<BaseEntity> entities = new Vector<BaseEntity>();
+	private Vector<BaseEntity> entities = new Vector<BaseEntity>(); // Contient
+																	// toutes
+																	// les
+																	// entit�es
+																	// du jeu.
+	private Timer timer;
+	private int time;
+	private final Level lvl;
+	public static final SimpleLog LOGGER = new SimpleLog();
 
-	public final static int TYPE_SERVER = 0;
-	public final static int TYPE_CLIENT = 1;
+	public Game() {
+		lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son
+									// nom et sa taille.
+		timer = new Timer();
+		timer.scheduleAtFixedRate(new TimerTask() {
 
-	private int type;
-
-	public Game(String path, int type) {
-		gameFolder = new File(path);
-		this.type = type;
-		logger = new SimpleLog();
-		if (!gameFolder.exists()) {
-			gameFolder.mkdirs();
-			logger.logTxt("Folder Error ! ", "Create it !");
-		}
-		if (type == Game.TYPE_CLIENT) {
-			lvl = new Level("map", 50); // Cr�ation de notre map, de param�tre son nom et sa taille.
-		}
+			@Override
+			public void run() {
+				time++;
+			}
+		}, 1000, 1000);
 	}
 
-	public void incrementTime() {
-		time++;
-	}
-
-	public int getTime() {
-		return time;
+	public Vector<BaseEntity> getEntities() {
+		return this.entities;
 	}
 
 	public String formatedTime() {
 		int hour = time % 3600;
 		int min = (time - hour * 3600) % 60;
 		int sec = time - min * 60;
-		if (hour >= 1) return (hour + ":" + min + ":" + sec);
-		else return (min + ":" + sec);
-	}
-
-	public Level getMap() {
-		return lvl;
-	}
-
-	public int getType() {
-		return type;
+		if (hour >= 1)
+			return (hour + ":" + min + ":" + sec);
+		else
+			return (min + ":" + sec);
 	}
 }

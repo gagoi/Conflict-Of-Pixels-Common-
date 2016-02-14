@@ -15,23 +15,10 @@ public class SimpleLog {
 	private Calendar cal = Calendar.getInstance();
 	private PrintWriter writer;
 
-	public SimpleLog() {
-		if (!Game.gameFolder.exists()) Game.gameFolder.mkdirs();
-		if (!logFile.exists()) try {
-			logFile.createNewFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		try {
-			writer = new PrintWriter(new FileOutputStream(logFile));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	public SimpleLog(String path) {
 		Game.gameFolder = new File(path);
+		logFile = new File(Game.gameFolder, "log.txt");
 		if (!Game.gameFolder.exists()) Game.gameFolder.mkdirs();
 		if (!logFile.exists()) try {
 			logFile.createNewFile();
