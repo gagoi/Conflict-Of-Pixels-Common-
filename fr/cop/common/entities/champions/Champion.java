@@ -4,7 +4,6 @@ import java.awt.Polygon;
 import java.util.Vector;
 
 import fr.cop.common.Buffs;
-import fr.cop.common.Game;
 import fr.cop.common.Stats;
 import fr.cop.common.entities.Entity;
 import fr.cop.common.entities.spells.Spell_Base;
@@ -136,7 +135,6 @@ public class Champion implements Entity {
 	
 
 	public void requestMove(int x, int y) {
-		Game.LOGGER.logTxt("Champ:MoveRequested", "Server Pos Requested : (" + x + ";" + y + ").");
 		posXRequested = x;
 		posYRequested = y;
 	}
